@@ -1,12 +1,17 @@
+interface DelayLimits {
+  min: number;
+  max: number;
+}
+
 export class CharacterEmitter {
-  private interval?: any;
+  private interval: any;
   private currentIndex: number = 0;
   private removeCharacterSection = '{r}';
   private currentValue = '';
 
   constructor(private inputString: string) {}
 
-  public subscribe(callback: (value: string) => void, timeout: number): void {
+  public subscribe(callback: (value: string) => void, delayLimits: DelayLimits): void {
     this.interval = setInterval(() => {
       // If we are at the end of the string, unsubscribe and return
       if (this.currentIndex === this.inputString.length) {
@@ -29,14 +34,21 @@ export class CharacterEmitter {
       } else {
         this.currentValue = this.currentValue + this.inputString[this.currentIndex];
       }
-      this.currentIndex++;
 
-      callback(this.currentValue)
-    }, timeout);
+      this.currentIndex++;
+      const delay = this.getRandomDelay(delayLimits);
+      setTimeout(() => {
+        callback(this.currentValue);
+      }, delay);
+    }, delayLimits.min);
   }
 
   public unsubscribe(): void {
     clearInterval(this.interval);
     this.interval = undefined;
+  }
+
+  private getRandomDelay(delayLimit: DelayLimits): number {
+    return Math.floor(Math.random() * (delayLimit.max - delayLimit.min));
   }
 }

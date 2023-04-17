@@ -8,7 +8,7 @@ const text = "Hello, world!";
 const stringWithImperfections = addSpellingMistakes(text);
 const characterEmitter = new CharacterEmitter(stringWithImperfections);
 
-characterEmitter.subscribe((value) => (container.innerText = value), 150);
+characterEmitter.subscribe((value) => (container.innerText = value), {min: 150, max: 250});
 
 function addSpellingMistakes(text: string): string {
   return text
