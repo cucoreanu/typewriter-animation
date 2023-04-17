@@ -1,0 +1,25 @@
+.wrapper {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.typing-demo {
+    animation: blink 300ms step-end infinite alternate;
+    white-space: nowrap;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 3vw;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@media (max-width: 512px) {
+    .typing-demo {
+        font-size: 4vw;
+    }
+}

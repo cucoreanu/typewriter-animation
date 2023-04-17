@@ -1,0 +1,38 @@
+{
+  "name": "typewriter-animation",
+  "version": "1.0.0",
+  "description": "Example of a natural typewriter animation with Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config prod.config.js",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cucoreanu/typewriter-animation.git"
+  },
+  "keywords": [
+    "animation",
+    "typewriter",
+    "typescript"
+  ],
+  "author": "Nicolae Cucoreanu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cucoreanu/typewriter-animation/issues"
+  },
+  "homepage": "https://github.com/cucoreanu/typewriter-animation#readme",
+  "devDependencies": {
+    "@webpack-cli/generators": "^3.0.1",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.1",
+    "typescript": "^5.0.3",
+    "webpack": "^5.79.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
