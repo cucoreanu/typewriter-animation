@@ -2,6 +2,8 @@
 
 It supports multiple texts and can make mistakes. 
 
+Live demo: https://cucorea.nu
+
 The full-text tutorial is available here: https://blog.cucorea.nu/how-i-made-a-more-human-animation
 
 YouTube: https://www.youtube.com/@random-code
